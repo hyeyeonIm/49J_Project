@@ -1,4 +1,3 @@
-package JavaQuiz;
 import java.awt.*; // for graphic 
 import java.awt.event.*; // for event
 import javax.swing.*; // for swing components path
