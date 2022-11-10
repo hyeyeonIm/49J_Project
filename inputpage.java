@@ -34,7 +34,7 @@ public class inputpage extends JFrame implements ActionListener {
     btn = new JButton("Let's go!") ;
 
     // vertical gap : 50
-    panel.setLayout(new GridLayout(3, 4,0,150)) ;
+    panel.setLayout(new GridLayout(3, 4,0,50)) ;
 
     panel.add(name, BorderLayout.EAST) ;
     panel.add(name_text, BorderLayout.WEST) ;
@@ -42,10 +42,6 @@ public class inputpage extends JFrame implements ActionListener {
     panel.add(major_text, BorderLayout.WEST) ; 
     panel.add(gender, BorderLayout.EAST) ;
     panel.add(gender_text, BorderLayout.WEST) ; 
-
-    // name_text.setHorizontalAlignment(JTextField.RIGHT) ;
-    // major_text.setHorizontalAlignment(JTextField.RIGHT) ;
-    // gender_text.setHorizontalAlignment(JTextField.RIGHT) ;
     
     this.add(panel, BorderLayout.CENTER) ; 
     this.add(btn, BorderLayout.SOUTH) ;
