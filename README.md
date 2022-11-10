@@ -2,6 +2,6 @@
 ---
 ## Member
 - Minse Ha
-- Hyeyeon Lim
+- Hyeyeon Im
 - Changhyun Oh
 - Mahir Labib
