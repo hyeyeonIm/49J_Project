@@ -5,6 +5,9 @@ abstract class quizframe2 extends JFrame{
     JPanel jPanel = new JPanel();
     JButton btn2 = new JButton("NEXT");
 
+    JRadioButton trueButton = new JRadioButton("True");
+    JRadioButton falseButton = new JRadioButton("False");
+
     Color color1 = new Color(198,218,214);
     Color color2 = new Color(109,146,155);
 
@@ -16,13 +19,11 @@ abstract class quizframe2 extends JFrame{
         jPanel.setBackground(color1);
         btn2.setBackground(color2);
 
-        JRadioButton trueButton = new JRadioButton("True");
         trueButton.setBounds(120, 30, 120, 50);
         // trueButton.setMnemonic(KeyEvent.VK_B);
         trueButton.setActionCommand("True");
         trueButton.setSelected(true);
 
-        JRadioButton falseButton = new JRadioButton("False");
         falseButton.setBounds(250, 30, 80, 50);
         // falseButton.setMnemonic(KeyEvent.VK_B);
         falseButton.setActionCommand("False");
@@ -32,11 +33,6 @@ abstract class quizframe2 extends JFrame{
         ButtonGroup group = new ButtonGroup();
         group.add(trueButton);
         group.add(falseButton);
-
-        //Register a listener for the radio buttons.
-        jPanel.add(trueButton, BorderLayout.WEST);
-        jPanel.add(falseButton, BorderLayout.WEST);
-        jPanel.add(btn2, BorderLayout.SOUTH);
 
         setVisible(true);
     }

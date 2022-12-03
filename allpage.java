@@ -249,7 +249,11 @@ class Quiz5 extends quizframe2{
     public void question() {
         // TODO Auto-generated method stub
         JLabel question = new JLabel("Q5: Haley is woman") ; // question
-        jPanel.add(question, BorderLayout.EAST);
+        jPanel.add(question, BorderLayout.NORTH);
+        //Register a listener for the radio buttons.
+        jPanel.add(trueButton, BorderLayout.WEST);
+        jPanel.add(falseButton, BorderLayout.WEST);
+        jPanel.add(btn2, BorderLayout.SOUTH);
         add(jPanel);
     }
 }
@@ -275,7 +279,11 @@ class Quiz6 extends quizframe2{
     public void question() {
         // TODO Auto-generated method stub
         JLabel question = new JLabel("Q6: Haley is woman") ; // question
-        jPanel.add(question, BorderLayout.CENTER);
+        jPanel.add(question, BorderLayout.NORTH);
+        //Register a listener for the radio buttons.
+        jPanel.add(trueButton, BorderLayout.WEST);
+        jPanel.add(falseButton, BorderLayout.WEST);
+        jPanel.add(btn2, BorderLayout.SOUTH);
         add(jPanel);
     }
 }
@@ -301,7 +309,11 @@ class Quiz7 extends quizframe2{
     public void question() {
         // TODO Auto-generated method stub
         JLabel question = new JLabel("Q7: Haley is woman") ; // question
-        jPanel.add(question, BorderLayout.CENTER);
+        jPanel.add(question, BorderLayout.NORTH);
+        //Register a listener for the radio buttons.
+        jPanel.add(trueButton, BorderLayout.WEST);
+        jPanel.add(falseButton, BorderLayout.WEST);
+        jPanel.add(btn2, BorderLayout.SOUTH);
         add(jPanel);
     }
 }
@@ -322,7 +334,11 @@ class Quiz8 extends quizframe2{
     public void question() {
         // TODO Auto-generated method stub
         JLabel question = new JLabel("Q8: Haley is woman") ; // question
-        jPanel.add(question, BorderLayout.CENTER);
+        jPanel.add(question, BorderLayout.NORTH);
+        //Register a listener for the radio buttons.
+        jPanel.add(trueButton, BorderLayout.WEST);
+        jPanel.add(falseButton, BorderLayout.WEST);
+        jPanel.add(btn2, BorderLayout.SOUTH);
         add(jPanel);
     }
 }
