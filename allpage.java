@@ -1,5 +1,3 @@
-import java.awt.Color;
-
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -71,38 +69,122 @@ class MainFrame extends JFrame{
                 name_info = name_text.getText();
                 major_info = major_text.getText();
                 gender_info = gender_text.getText();
+
                 // Change Frame
-                new Quiz1();
+                // Call Quiz1 and Quiz1 extends quizframe1. So, we have to create object
+                Quiz1 q1 = new Quiz1(); 
+                q1.question();
+                q1.answer();
+
                 setVisible(false); // invisible
             }
         });
     }
 }// Finish inputpage
 
-// Quiz Frame
-class Quiz1 extends JFrame{
-    Quiz1() {
-        super("Quiz1");
-        JPanel jPanel = new JPanel();
-        JButton btn2 = new JButton("NEXT");
-        setSize(500, 500); // size
-        Color color1 = new Color(198,218,214);
-        Color color2 = new Color(109,146,155);
-
-        jPanel.setBackground(color1);
-        btn2.setBackground(color2);
-        jPanel.add(btn2);
-        add(jPanel);
-
-        setVisible(true);
-
+// Quiz1
+class Quiz1 extends quizframe1{
+    public Quiz1() {
+        setTitle("Quiz1");
+        // Button Action : click the button, move to next quiz
         btn2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new Ranking_System();
+                // Change Frame
+                // Call Quiz2 and Quiz2 extends quizframe1. So, we have to create object
+                Quiz2 q2 = new Quiz2(); 
+                q2.question();
+                q2.answer();
+                new Ranking_System(); // create new object
                 setVisible(false); // invisible
             }
         });
+    }
+    @Override
+    public void question() {
+        // TODO Auto-generated method stub
+        JLabel question = new JLabel("1 + 1 ?") ; // question
+        jPanel.add(question, BorderLayout.EAST);
+        add(jPanel);
+    }
+
+    @Override
+    public void answer() {
+        // TODO Auto-generated method stub
+        JTextField answer = new JTextField("          ") ; // answer
+        jPanel.add(answer, BorderLayout.WEST);
+        jPanel.add(btn2, BorderLayout.SOUTH);
+        add(jPanel);
+    }
+}
+
+
+// Quiz2
+class Quiz2 extends quizframe1{
+    public Quiz2() {
+        setTitle("Quiz2");
+        // Button Action : click the button, move to next quiz
+        btn2.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // Change Frame
+                // Call Quiz1 and Quiz1 extends quizframe1. So, we have to create object
+                Quiz8 q3 = new Quiz8(); 
+                q3.question();
+                q3.choice();
+            }
+        });
+    }
+    @Override
+    public void question() {
+        // TODO Auto-generated method stub
+        JLabel question = new JLabel("2 + 2 ?") ; // question
+        jPanel.add(question, BorderLayout.EAST);
+        add(jPanel);
+    }
+
+    @Override
+    public void answer() {
+        // TODO Auto-generated method stub
+        JTextField answer = new JTextField("          ") ; // answer
+        jPanel.add(answer, BorderLayout.WEST);
+        jPanel.add(btn2, BorderLayout.SOUTH);
+        add(jPanel);
+    }
+}
+
+///////////////////////
+// MAKE OTHER QUIZS //
+//////////////////////
+
+// Quiz8
+class Quiz8 extends quizframe2{
+    public Quiz8() {
+        setTitle("Quiz8");
+        // Button Action : click the button, move to next quiz
+        btn2.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new Ranking_System(); // Go to Ranking System
+                setVisible(false); // invisible
+            }
+        });
+    }
+    @Override
+    public void question() {
+        // TODO Auto-generated method stub
+        JLabel question = new JLabel("Haley is woman") ; // question
+        jPanel.add(question, BorderLayout.CENTER);
+        add(jPanel);
+    }
+
+    @Override
+    public void choice() {
+        // TODO Auto-generated method stub
+        JTextField answer = new JTextField("          ") ; // answer
+        jPanel.add(answer, BorderLayout.WEST);
+        jPanel.add(btn2, BorderLayout.SOUTH);
+        add(jPanel);
     }
 }
 
@@ -121,8 +203,12 @@ class Ranking_System extends JFrame{
         Color color2 = new Color(109,146,155);
 
         jPanel.setBackground(color1);
+
         jPanel.add(btn3);
         jPanel.add(btn4);
+        jPanel.add(btn3, BorderLayout.WEST) ;
+        jPanel.add(btn3, BorderLayout.EAST) ;
+
         btn3.setBackground(color2);
         btn4.setBackground(color2);
         add(jPanel);
