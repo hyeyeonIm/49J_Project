@@ -1,7 +1,7 @@
 import java.awt.*;
 import javax.swing.*;
 
-abstract class quizframe2 extends JFrame{
+abstract class tf_quiz extends JFrame{
     JPanel jPanel = new JPanel();
     JButton btn2 = new JButton("NEXT");
 
@@ -13,7 +13,7 @@ abstract class quizframe2 extends JFrame{
 
     public abstract void question();
 
-    public quizframe2(){
+    public tf_quiz(){
         setSize(500, 500); // size
 
         jPanel.setBackground(color1);

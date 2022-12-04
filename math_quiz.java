@@ -2,8 +2,7 @@ import java.awt.Color;
 
 import javax.swing.*;
 
-// math quiz
-abstract class quizframe1 extends JFrame{
+abstract class math_quiz extends JFrame{
     JPanel jPanel = new JPanel();
     JButton btn2 = new JButton("NEXT");
 
@@ -13,7 +12,7 @@ abstract class quizframe1 extends JFrame{
     public abstract void question();
     public abstract void answer();
 
-    public quizframe1(){
+    public math_quiz(){
         setSize(500, 500); // size
 
         jPanel.setBackground(color1);
