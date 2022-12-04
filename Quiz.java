@@ -7,8 +7,6 @@ import java.awt.*;
 //Quiz1
 public class Quiz extends math_quiz{
 
-    Player player1 = new Player();
-
     public Quiz() {
         setTitle("Quiz1");
         // Button Action : click the button, move to next quiz
