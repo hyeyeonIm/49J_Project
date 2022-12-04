@@ -7,7 +7,12 @@ import java.awt.*;
 public class Ranking extends JFrame{
         public Ranking() {
             super("RANKING");
-    
+            // LOAD players from text file in Player Class with Linked List Data Structure
+
+            // SORT player instances and extract TOP 3 players
+
+                // Save top 3 players' name, major, gender, SCORE in local variables
+
             JPanel jPanel = new JPanel();
             JButton btn3 = new JButton("AGAIN");
             JButton btn4 = new JButton("END");
@@ -27,6 +32,10 @@ public class Ranking extends JFrame{
             btn4.setBackground(color2);
             add(jPanel);
     
+            // MAKE LABELS to show top 3 players
+
+
+
             setVisible(true);
             
             btn3.addActionListener(new ActionListener() {
