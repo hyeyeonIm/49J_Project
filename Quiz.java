@@ -4,12 +4,12 @@ import java.awt.event.ActionListener;
 import javax.swing.*;
 import java.awt.*;
 
-public class Quiz extends JFrame {
+// public class Quiz extends JFrame {
 
 //Quiz1
-class Quiz1 extends math_quiz{
+class Quiz extends math_quiz{
 
-    public Quiz1() {
+    public Quiz() {
 
         setTitle("Quiz1");
 
@@ -42,7 +42,7 @@ class Quiz1 extends math_quiz{
         jPanel.add(btn2, BorderLayout.SOUTH);
         add(jPanel);
     }
-}
+// }
 
 
 // Quiz2
