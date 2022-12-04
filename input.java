@@ -65,7 +65,10 @@ public class input extends JFrame {
                     name_info = name_text.getText();
                     major_info = major_text.getText();
                     gender_info = gender_text.getText();
+                    
+                    // SAVE information in a file
 
+                    
                     // Change Frame
                     // Call Quiz1 and Quiz1 extends quizframe1. So, we have to create object
                     Quiz q1 = new Quiz();

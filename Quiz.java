@@ -6,6 +6,8 @@ import java.awt.*;
 
 //Quiz1
 public class Quiz extends math_quiz{
+    // Static valuable to add and save score of a player
+    public static int SCORE = 0;
 
     public Quiz() {
         setTitle("Quiz1");
@@ -245,6 +247,8 @@ class Quiz8 extends tf_quiz{
         btn2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                // SAVE SCORE in a File
+
                 new Ranking(); // Go to Ranking System
                 setVisible(false); // invisible
             }
