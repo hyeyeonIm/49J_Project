@@ -21,7 +21,7 @@ public class PrimeNumber {
     	  a = b;
     	  b = tmp;
       }
-      
+  
       System.out.println("Upper bound: "+a + "\n");
       System.out.println("Lower bound: "+b + "\n");
       

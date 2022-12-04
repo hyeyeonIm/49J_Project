@@ -3,8 +3,8 @@ import java.awt.event.*; // for event
 import javax.swing.*; // for swing components path
 import javax.swing.event.*; // for swing events path
 // import java.util.Timer;
-import java.util.TimerTask;
-import javax.swing.Timer;
+// import java.util.TimerTask;
+// import javax.swing.Timer;
 
 //abstract
 public abstract class QuizFrame{
@@ -23,7 +23,7 @@ public abstract class QuizFrame{
      //  JButton button_3 = new JButton("MINSE CODE");
      frame.getContentPane().setLayout(new GridLayout(3,2,5,5)); 
       
-      
+       
       // Adds Button to content pane of frame
 
      //  frame.getContentPane().add(button_1, BorderLayout.WEST); // Adds Button to content pane of frame
