@@ -20,9 +20,6 @@ public class input extends JFrame {
         static String gender_info;
     
         private JButton btn1;
-    
-        // Create player object
-        Player player1= new Player();
 
         public input() {
     
