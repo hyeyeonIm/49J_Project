@@ -11,22 +11,26 @@ public class PrimeNumber {
         Random rand = new Random(); //instance of random class
         int upperbound = 25;
         //generate random values from 0-24
-        int a = rand.nextInt(upperbound); 
+        int a = rand.nextInt(upperbound);
         int b = rand.nextInt(upperbound);
         int tmp;
-     
+
 //      ensure rand_a always lower bound & rand_b always upper bound
       if(a>b) {
     	  tmp = a;
     	  a = b;
     	  b = tmp;
       }
+<<<<<<< HEAD
   
+=======
+
+>>>>>>> 35e06ad1693cce87e456be57d44286106c3a6bc4
       System.out.println("Upper bound: "+a + "\n");
       System.out.println("Lower bound: "+b + "\n");
-      
-    //   Part for calculating the prime numbers 
-    
+
+    //   Part for calculating the prime numbers
+
         while (a < b) {
             boolean flag = false;
 
@@ -37,7 +41,7 @@ public class PrimeNumber {
                     break;
                 }
             }
-
+              // need to change the print out to appending in an ArrayList
             if (!flag && a != 0 && a != 1)
                 System.out.print(a + " ");
 
@@ -45,4 +49,3 @@ public class PrimeNumber {
         }
     }
 }
-
