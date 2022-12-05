@@ -95,7 +95,6 @@ public class input extends JFrame {
                     q1.random();
                     q1.question();
                     q1.answer();
-                    q1.score();
                     setVisible(false); // invisible
                 }
             }
@@ -105,5 +104,6 @@ public class input extends JFrame {
 
         public static void main(String[] args) {
             new input();
+            
         }
 }
