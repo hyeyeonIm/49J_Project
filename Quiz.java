@@ -20,6 +20,9 @@ public class Quiz extends math_quiz{
 
     public static int SCORE = 0;
 
+    public JRadioButton tfInputList[] = new JRadioButton [4];
+    public String tfAnswerList[] = new String [4];
+
     //answer var
     public int answer_1;
     public int answer_2;
@@ -176,8 +179,9 @@ class Quiz4 extends math_quiz implements quiz_interface{
                 // Change Frame
                 // Call Quiz5 and Quiz5 extends tf_quiz. So, we have to create object
                 Quiz5 q5 = new Quiz5(); 
-                q5.question();
                 q5.score(input4,answer4);
+                tfAnswerList[0] = q5.question();
+                tfInputList[0] = q5.trueButton;
                 setVisible(false); // invisible
             }
         });
@@ -185,12 +189,13 @@ class Quiz4 extends math_quiz implements quiz_interface{
     @Override
     public void question() {
         // TODO Auto-generated method stub
-        JLabel question = new JLabel("What is prime number between "+num1+" and "+ num2+" = ?") ; // question
+        JLabel question = new JLabel("What is the smallest prime number between "+num1+" and "+ num2+" = ?") ; // question
         jPanel.add(question, BorderLayout.EAST);
         add(jPanel);
         arr = PrimeNumber.Primenumber(num1, num2);
         answer_4 = arr.get(0);
         aa.setAnswer(answer_4);
+
     }
 
 
@@ -228,21 +233,23 @@ class Quiz5 extends tf_quiz implements quiz_interface{
                 // Change Frame
                 // Call Quiz6 and Quiz6 extends tf_quiz. So, we have to create object
                 Quiz6 q6 = new Quiz6(); 
-                q6.question();
+                tfAnswerList[1] = q6.question();
+                tfInputList[1] = q6.trueButton;
                 setVisible(false); // invisible
             }
         });
     }
     @Override
-    public void question() {
+    public String question() {
         // TODO Auto-generated method stub
-        JLabel question = new JLabel("Q5: Haley is woman") ; // question
+        JLabel question = new JLabel("You can call a static method importing its class, but without creating an object") ; // question
         jPanel.add(question, BorderLayout.NORTH);
         //Register a listener for the radio buttons.
         jPanel.add(trueButton, BorderLayout.WEST);
         jPanel.add(falseButton, BorderLayout.WEST);
         jPanel.add(btn2, BorderLayout.SOUTH);
         add(jPanel);
+        return "true";
     }
     @Override
     public void score(String input4, String answer4){
@@ -266,20 +273,25 @@ class Quiz6 extends tf_quiz{
                 // Change Frame
                 Quiz7 q7 = new Quiz7(); 
                 q7.question();
+                tfAnswerList[2] = q7.question();
+                tfInputList[2] = q7.trueButton;
                 setVisible(false); // invisible
+
+
             }
         });
     }
     @Override
-    public void question() {
+    public String question() {
         // TODO Auto-generated method stub
-        JLabel question = new JLabel("Q6: Haley is woman") ; // question
+        JLabel question = new JLabel("You can call a static method importing its class, and creating at least one instance of its object") ; // question
         jPanel.add(question, BorderLayout.NORTH);
         //Register a listener for the radio buttons.
         jPanel.add(trueButton, BorderLayout.WEST);
         jPanel.add(falseButton, BorderLayout.WEST);
         jPanel.add(btn2, BorderLayout.SOUTH);
         add(jPanel);
+        return "false";
     }
 }
 
@@ -294,20 +306,23 @@ class Quiz7 extends tf_quiz{
                 // Change Frame
                 Quiz8 q8 = new Quiz8(); 
                 q8.question();
+                tfAnswerList[3] = q8.question();
+                tfInputList[3] = q8.trueButton;
                 setVisible(false); // invisible
             }
         });
     }
     @Override
-    public void question() {
+    public String question() {
         // TODO Auto-generated method stub
-        JLabel question = new JLabel("Q7: Haley is woman") ; // question
+        JLabel question = new JLabel("This code will work -> String height = 30") ; // question
         jPanel.add(question, BorderLayout.NORTH);
         //Register a listener for the radio buttons.
         jPanel.add(trueButton, BorderLayout.WEST);
         jPanel.add(falseButton, BorderLayout.WEST);
         jPanel.add(btn2, BorderLayout.SOUTH);
         add(jPanel);
+        return "false";
     }
 }
 // Quiz8
@@ -318,6 +333,23 @@ class Quiz8 extends tf_quiz{
         btn2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                String answer8 = String.valueOf(tfInputList[3].isSelected());
+                
+                if (answer8.equals("true") ){
+                    System.out.print("돌아감");
+                    SCORE++;
+                }
+                // print test
+                for (JRadioButton j: tfInputList) {
+                    System.out.print("퀴즈5-8 인풋");
+                    System.out.println(j.isSelected());
+                }
+                for (String j: tfAnswerList) {
+                    System.out.print("퀴즈5-8 정답");
+                    System.out.println(j);
+                }
+                // test end
+
                 // SAVE SCORE in a File
                 String save_score = String.valueOf(SCORE);
                 try (FileWriter f = new FileWriter("player.txt", true);
@@ -335,15 +367,16 @@ class Quiz8 extends tf_quiz{
         });
     }
     @Override
-    public void question() {
+    public String question() {
         // TODO Auto-generated method stub
-        JLabel question = new JLabel("Q8: Haley is woman") ; // question
+        JLabel question = new JLabel("In terms of Time complexity, O(2^n) > O(n^2). ") ; // question
         jPanel.add(question, BorderLayout.NORTH);
         //Register a listener for the radio buttons.
         jPanel.add(trueButton, BorderLayout.WEST);
         jPanel.add(falseButton, BorderLayout.WEST);
         jPanel.add(btn2, BorderLayout.SOUTH);
         add(jPanel);
+        return "true";
     }
     }
 }

@@ -11,7 +11,7 @@ abstract class tf_quiz extends JFrame{
     Color color1 = new Color(198,218,214);
     Color color2 = new Color(109,146,155);
 
-    public abstract void question();
+    public abstract String question();
 
     public tf_quiz(){
         setSize(500, 500); // size

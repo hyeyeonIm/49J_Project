@@ -7,3 +7,5 @@ name, major, gender, 0
 test, test3, testg, 0
 haley, cs, f, 0
 haley, cs, f, 0
+test, test, test, 4
+e, e, e, 2
