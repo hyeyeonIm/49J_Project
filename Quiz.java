@@ -92,8 +92,8 @@ class Quiz2 extends math_quiz{
                 q3.random();
                 q3.question();
                 q3.answer();
-                q3.score(input2,answer2);
                 setVisible(false); // invisible
+                q3.score(input2,answer2);
             }
         });
     }
@@ -133,8 +133,8 @@ class Quiz3 extends math_quiz implements quiz_interface{
                 q4.random();
                 q4.question();
                 q4.answer();
-                q4.score(input3,answer3);
                 setVisible(false); // invisible
+                q4.score(input3,answer3);
             }
         });
     }
@@ -179,10 +179,10 @@ class Quiz4 extends math_quiz implements quiz_interface{
                 // Change Frame
                 // Call Quiz5 and Quiz5 extends tf_quiz. So, we have to create object
                 Quiz5 q5 = new Quiz5(); 
-                q5.score(input4,answer4);
                 tfAnswerList[0] = q5.question();
                 tfInputList[0] = q5.trueButton;
                 setVisible(false); // invisible
+                q5.score(input4,answer4);
             }
         });
     }
@@ -233,8 +233,8 @@ class Quiz5 extends tf_quiz implements quiz_interface{
                 tfAnswerList[1] = q6.question();
                 tfInputList[1] = q6.trueButton;
                 String answer5 = String.valueOf(tfInputList[0].isSelected());
-                q6.score(answer5,"true");
                 setVisible(false); // invisible
+                q6.score(answer5,"true");
             }
         });
     }
@@ -275,8 +275,8 @@ class Quiz6 extends tf_quiz implements quiz_interface{
                 tfAnswerList[2] = q7.question();
                 tfInputList[2] = q7.trueButton;
                 String answer6 = String.valueOf(tfInputList[1].isSelected());
-                q7.score(answer6,"false");
                 setVisible(false); // invisible
+                q7.score(answer6,"false");
             }
         });
     }
@@ -316,8 +316,8 @@ class Quiz7 extends tf_quiz implements quiz_interface{
                 tfAnswerList[3] = q8.question();
                 tfInputList[3] = q8.trueButton;
                 String answer7 = String.valueOf(tfInputList[2].isSelected());
-                q8.score(answer7,"false");
                 setVisible(false); // invisible
+                q8.score(answer7,"false");
             }
         });
     }
