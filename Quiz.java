@@ -8,10 +8,25 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+
+// import Factorial.java.*;
 //Quiz1
 public class Quiz extends math_quiz{
     // Static valuable to add and save score of a player
     public static int SCORE = 0;
+
+
+    //answer var
+    public int answer_1;
+    public int answer_2;
+    public int answer_3;
+    public ArrayList<Integer> answer_4;
+    public int answer_5;
+    public int answer_6;
+    public int answer_7;
+    public int answer_8;
+
 
     public Quiz() {
         setTitle("Quiz1");
@@ -22,9 +37,9 @@ public class Quiz extends math_quiz{
                 // Change Frame
                 // Call Quiz2 and Quiz2 extends math_quiz. So, we have to create object
                 Quiz2 q2 = new Quiz2(); 
-                q2.random();
-                q2.question();
-                q2.answer();
+                q2.random(); // generate num1 num2
+                q2.question(); // generate quiz with num1 num2, and answer
+                q2.answer(); //compare
                 // new Ranking_System(); // create new object
                 setVisible(false); // invisible
             }
@@ -35,15 +50,18 @@ public class Quiz extends math_quiz{
         // TODO Auto-generated method stub
         JLabel question = new JLabel(num1+" + "+num2+" = ?") ; // question
         jPanel.add(question, BorderLayout.EAST);
+        answer_1 = num1 + num2;
+
     }
 
     @Override
     public void answer() {
         // TODO Auto-generated method stub
-        JTextField answer = new JTextField("          ") ; // answer
+        JTextField answer = new JTextField("          ") ; // answer input plc
         jPanel.add(answer, BorderLayout.WEST);
         jPanel.add(btn2, BorderLayout.SOUTH);
         add(jPanel);
+
     }
 
 
@@ -73,6 +91,8 @@ class Quiz2 extends math_quiz{
         JLabel question = new JLabel(num2+" - "+num1+" = ?") ; // question
         jPanel.add(question, BorderLayout.EAST);
         add(jPanel);
+        answer_2 = num2 - num1;
+
     }
 
     @Override
@@ -106,9 +126,11 @@ class Quiz3 extends math_quiz{
     @Override
     public void question() {
         // TODO Auto-generated method stu
-        JLabel question = new JLabel(num2+"! = ?") ; // question
+        JLabel question = new JLabel(num1+" ! = ?") ; // question
         jPanel.add(question, BorderLayout.EAST);
         add(jPanel);
+        answer_3 = Factorial.multiplyNumbers(num1);
+
     }
 
     @Override
@@ -144,7 +166,17 @@ class Quiz4 extends math_quiz{
         JLabel question = new JLabel("What is prime number between "+num1+" and "+ num2+" = ?") ; // question
         jPanel.add(question, BorderLayout.EAST);
         add(jPanel);
+        answer_4 = PrimeNumber.Primenumber(num1, num2);
+        System.out.println(answer_1);
+        System.out.println(answer_2);
+        System.out.println(answer_3);
+        System.out.println(answer_4);
+        // System.out.println(answer_5);
+        // System.out.println(answer_6);
+        // System.out.println(answer_7);
+        // System.out.println(answer_8);
     }
+
 
     @Override
     public void answer() {
@@ -284,4 +316,5 @@ class Quiz8 extends tf_quiz{
         add(jPanel);
     }
     }
+
 }
