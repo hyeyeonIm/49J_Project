@@ -40,7 +40,6 @@ public class Quiz extends math_quiz{
                 q2.random(); // generate num1 num2
                 q2.question(); // generate quiz with num1 num2, and answer
                 q2.answer(); //compare
-                // new Ranking_System(); // create new object
                 setVisible(false); // invisible
             }
         });
@@ -70,13 +69,10 @@ class Quiz2 extends math_quiz{
     public Quiz2() {
         setTitle("Quiz2");
         // Button Action : click the button, move to next quiz
-        
         btn2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-        
                 // Change Frame
-                // Call Quiz1 and Quiz1 extends math_quiz. So, we have to create object
                 Quiz3 q3 = new Quiz3(); 
                 q3.random();
                 q3.question();
@@ -114,7 +110,6 @@ class Quiz3 extends math_quiz{
             @Override
             public void actionPerformed(ActionEvent e) {
                 // Change Frame
-                // Call Quiz2 and Quiz2 extends math_quiz. So, we have to create object
                 Quiz4 q4 = new Quiz4(); 
                 q4.random();
                 q4.question();
@@ -152,10 +147,9 @@ class Quiz4 extends math_quiz{
             @Override
             public void actionPerformed(ActionEvent e) {
                 // Change Frame
-                // Call Quiz2 and Quiz2 extends math_quiz. So, we have to create object
+                // Call Quiz5 and Quiz5 extends tf_quiz. So, we have to create object
                 Quiz5 q5 = new Quiz5(); 
                 q5.question();
-                // new Ranking_System(); // create new object
                 setVisible(false); // invisible
             }
         });
@@ -188,7 +182,7 @@ class Quiz4 extends math_quiz{
     }
 }
 ///////////////////////
-// MAKE OTHER QUIZS //
+//    QUIZ 5 ~ 8    //
 //////////////////////
 
 // Quiz5
@@ -200,7 +194,7 @@ class Quiz5 extends tf_quiz{
             @Override
             public void actionPerformed(ActionEvent e) {
                 // Change Frame
-                // Call Quiz2 and Quiz2 extends math_quiz. So, we have to create object
+                // Call Quiz6 and Quiz6 extends tf_quiz. So, we have to create object
                 Quiz6 q6 = new Quiz6(); 
                 q6.question();
                 setVisible(false); // invisible
@@ -229,10 +223,8 @@ class Quiz6 extends tf_quiz{
             @Override
             public void actionPerformed(ActionEvent e) {
                 // Change Frame
-                // Call Quiz2 and Quiz2 extends quizframe1. So, we have to create object
                 Quiz7 q7 = new Quiz7(); 
                 q7.question();
-                // new Ranking_System(); // create new object
                 setVisible(false); // invisible
             }
         });
@@ -259,10 +251,8 @@ class Quiz7 extends tf_quiz{
             @Override
             public void actionPerformed(ActionEvent e) {
                 // Change Frame
-                // Call Quiz2 and Quiz2 extends quizframe1. So, we have to create object
                 Quiz8 q8 = new Quiz8(); 
                 q8.question();
-                // new Ranking_System(); // create new object
                 setVisible(false); // invisible
             }
         });

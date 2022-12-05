@@ -19,12 +19,6 @@ public class Ranking extends JFrame{
 	private JScrollPane jsp;
 
     static String contents[][] = new String[3][4];
-    // { 
-    //     // {"Jake", "AI", "Male", "8"},
-    //     // {"Haley", "ME", "Female", "10"},
-    //     // {"Minse", "CS", "Male", "6"},
-    //     // {"mike", "test", "ai", "0"}
-    // };
 
         public Ranking() {
             //test
@@ -87,10 +81,7 @@ public class Ranking extends JFrame{
 
             } catch (IOException e) {
                 e.printStackTrace();
-            }
-
-            
-        
+            }        
 
             // end test
             // LOAD players from text file in Player Class with Linked List Data Structure
@@ -138,6 +129,5 @@ public class Ranking extends JFrame{
 
     public static void main(String[] args) {
         new Ranking();
-        
     }
 }

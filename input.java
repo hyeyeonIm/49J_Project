@@ -73,6 +73,7 @@ public class input extends JFrame {
                     major_info = major_text.getText();
                     gender_info = gender_text.getText();
                     
+                    // If nothing in input, error message
                     if (name_info.equals("") || major_info.equals("") ||  gender_info.equals("")){
                         JOptionPane.showMessageDialog(null, "Enter your info", "ERROR MESSAGE", JOptionPane.ERROR_MESSAGE);
                     }
@@ -89,7 +90,7 @@ public class input extends JFrame {
                         i.printStackTrace();
                     }
                     // Change Frame
-                    // Call Quiz1 and Quiz1 extends quizframe1. So, we have to create object
+                    // Call Quiz1 and Quiz1 extends math_quiz frame. So, we have to create object
                     Quiz q1 = new Quiz();
                     q1.random();
                     q1.question();
