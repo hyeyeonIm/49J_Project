@@ -14,8 +14,8 @@ import java.util.ArrayList;
 //Quiz1
 public class Quiz extends math_quiz implements quiz_interface{
     // Static valuable to add and save score of a player
+    answer aa = new answer();
     public static int SCORE = 0;
-
 
     //answer var
     public int answer_1;
@@ -27,19 +27,23 @@ public class Quiz extends math_quiz implements quiz_interface{
     public int answer_7;
     public int answer_8;
 
+    static String input1;
 
     public Quiz() {
         setTitle("Quiz1");
+        
         // Button Action : click the button, move to next quiz
         btn2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                aa.setInput(answer.getText());
                 // Change Frame
                 // Call Quiz2 and Quiz2 extends math_quiz. So, we have to create object
                 Quiz2 q2 = new Quiz2(); 
                 q2.random(); // generate num1 num2
                 q2.question(); // generate quiz with num1 num2, and answer
                 q2.answer(); //compare
+                q2.score("test", "test");
                 setVisible(false); // invisible
             }
         });
@@ -49,41 +53,40 @@ public class Quiz extends math_quiz implements quiz_interface{
         // TODO Auto-generated method stub
         JLabel question = new JLabel(num1+" + "+num2+" = ?") ; // question
         jPanel.add(question, BorderLayout.EAST);
-        answer_1 = num1 + num2;
-
+        answer_1 = num2 + num1;
+        aa.setAnswer(answer_1);
     }
 
     @Override
     public void answer() {
         // TODO Auto-generated method stub
-        JTextField answer = new JTextField("          ") ; // answer input plc
         jPanel.add(answer, BorderLayout.WEST);
         jPanel.add(btn2, BorderLayout.SOUTH);
         add(jPanel);
-
     }
 
+    String ainput=aa.getInput();
+    String aanswer_str =String.valueOf(aa.getAnswer());
     @Override
-    public void score(String input, int answer){
-        
-        // change input answer with str
-        String answer_str =String.valueOf(answer);
-
-        if(input == answer_str){
+    public void score(String ainput, String aanswer_str){
+        if(ainput.equals(aanswer_str)){
+            System.out.println(aa.getAnswer());
+            System.out.println(aa.getInput());
             SCORE++;
+            System.out.println(SCORE);
         }
-
     }
-
 
 // Quiz2
-class Quiz2 extends math_quiz{
+class Quiz2 extends math_quiz implements quiz_interface{
     public Quiz2() {
         setTitle("Quiz2");
         // Button Action : click the button, move to next quiz
+
         btn2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                System.out.println(SCORE);
                 // Change Frame
                 Quiz3 q3 = new Quiz3(); 
                 q3.random();
@@ -110,6 +113,16 @@ class Quiz2 extends math_quiz{
         jPanel.add(answer, BorderLayout.WEST);
         jPanel.add(btn2, BorderLayout.SOUTH);
         add(jPanel);
+    }
+
+    @Override
+    public void score(String ainput, String aanswer_str){
+        if(ainput.equals(aanswer_str)){
+            System.out.println(aa.getAnswer());
+            System.out.println(aa.getInput());
+            SCORE++;
+            System.out.println(SCORE);
+        }
     }
 }
 
@@ -300,7 +313,6 @@ class Quiz8 extends tf_quiz{
                 } catch (IOException i) {
                     i.printStackTrace();
                 }
-
                 new Ranking(); // Go to Ranking System
                 setVisible(false); // invisible
             }
@@ -318,5 +330,14 @@ class Quiz8 extends tf_quiz{
         add(jPanel);
     }
     }
+
+public static void main(String[] args) {
+    new Quiz();
+}
+@Override
+public void score(String inp, String answer) {
+    // TODO Auto-generated method stub
+    
+}
 
 }
