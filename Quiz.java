@@ -271,7 +271,7 @@ class Quiz6 extends tf_quiz implements quiz_interface{
             public void actionPerformed(ActionEvent e) {
                 // Change Frame
                 Quiz7 q7 = new Quiz7(); 
-                q7.question();
+                // q7.question();
                 tfAnswerList[2] = q7.question();
                 tfInputList[2] = q7.trueButton;
                 String answer6 = String.valueOf(tfInputList[1].isSelected());
@@ -283,7 +283,7 @@ class Quiz6 extends tf_quiz implements quiz_interface{
     @Override
     public String question() {
         // TODO Auto-generated method stub
-        JLabel question = new JLabel("You can call a static method importing its class, and creating at least one instance of its object") ; // question
+        JLabel question = new JLabel("<html>You can call a static method importing its class, <br/> and creating at least one instance of its object </html>") ; // question
         jPanel.add(question, BorderLayout.NORTH);
         //Register a listener for the radio buttons.
         jPanel.add(trueButton, BorderLayout.WEST);
@@ -312,7 +312,7 @@ class Quiz7 extends tf_quiz implements quiz_interface{
             public void actionPerformed(ActionEvent e) {
                 // Change Frame
                 Quiz8 q8 = new Quiz8(); 
-                q8.question();
+                // q8.question();
                 tfAnswerList[3] = q8.question();
                 tfInputList[3] = q8.trueButton;
                 String answer7 = String.valueOf(tfInputList[2].isSelected());
