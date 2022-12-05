@@ -12,7 +12,7 @@ import java.util.ArrayList;
 
 // import Factorial.java.*;
 //Quiz1
-public class Quiz extends math_quiz{
+public class Quiz extends math_quiz implements quiz_interface{
     // Static valuable to add and save score of a player
     public static int SCORE = 0;
 
@@ -61,6 +61,18 @@ public class Quiz extends math_quiz{
         jPanel.add(answer, BorderLayout.WEST);
         jPanel.add(btn2, BorderLayout.SOUTH);
         add(jPanel);
+
+    }
+
+    @Override
+    public void score(String input, int answer){
+        
+        // change input answer with str
+        String answer_str =String.valueOf(answer);
+
+        if(input == answer_str){
+            SCORE++;
+        }
 
     }
 
