@@ -74,7 +74,7 @@ public class Quiz extends math_quiz{
     }
 
 // Quiz2
-class Quiz2 extends math_quiz implements quiz_interface{
+class Quiz2 extends math_quiz{
     public Quiz2() {
         setTitle("Quiz2");
         // Button Action : click the button, move to next quiz
@@ -112,17 +112,6 @@ class Quiz2 extends math_quiz implements quiz_interface{
         jPanel.add(answer, BorderLayout.WEST);
         jPanel.add(btn2, BorderLayout.SOUTH);
         add(jPanel);
-    }
-
-    String answer2 = String.valueOf(aa.getAnswer());
-    @Override
-    public void score(String input1, String answer1){
-        if(input1.equals(answer1)){
-            // System.out.println(input1);
-            // System.out.println(answer1);
-            SCORE++;
-            // System.out.println(SCORE);
-        }
     }
 }
 
