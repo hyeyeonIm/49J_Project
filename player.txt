@@ -9,3 +9,7 @@ haley, cs, f, 0
 haley, cs, f, 0
 test, test, test, 4
 e, e, e, 2
+d, d, d, 6
+d, d, d, 6
+d, d, d, 6
+d, d, d, 2

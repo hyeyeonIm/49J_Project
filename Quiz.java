@@ -211,10 +211,7 @@ class Quiz4 extends math_quiz implements quiz_interface{
     @Override
     public void score(String input3, String answer3){
         if(input3.equals(answer3)){
-            // System.out.println(input3);
-            // System.out.println(answer3);
             SCORE++;
-            // System.out.println(SCORE);
         }
     }
 }
@@ -235,6 +232,8 @@ class Quiz5 extends tf_quiz implements quiz_interface{
                 Quiz6 q6 = new Quiz6(); 
                 tfAnswerList[1] = q6.question();
                 tfInputList[1] = q6.trueButton;
+                String answer5 = String.valueOf(tfInputList[0].isSelected());
+                q6.score(answer5,"true");
                 setVisible(false); // invisible
             }
         });
@@ -254,16 +253,16 @@ class Quiz5 extends tf_quiz implements quiz_interface{
     @Override
     public void score(String input4, String answer4){
         if(input4.equals(answer4)){
-            System.out.println(input4);
-            System.out.println(answer4);
+            // System.out.println(input4);
+            // System.out.println(answer4);
             SCORE++;
-            System.out.println(SCORE);
+            // System.out.println(SCORE);
         }
     }
 }
 
 // Quiz6
-class Quiz6 extends tf_quiz{
+class Quiz6 extends tf_quiz implements quiz_interface{
     public Quiz6() {
         setTitle("Quiz6");
         // Button Action : click the button, move to next quiz
@@ -275,9 +274,9 @@ class Quiz6 extends tf_quiz{
                 q7.question();
                 tfAnswerList[2] = q7.question();
                 tfInputList[2] = q7.trueButton;
+                String answer6 = String.valueOf(tfInputList[1].isSelected());
+                q7.score(answer6,"false");
                 setVisible(false); // invisible
-
-
             }
         });
     }
@@ -293,10 +292,18 @@ class Quiz6 extends tf_quiz{
         add(jPanel);
         return "false";
     }
+
+    @Override
+    public void score(String input, String answer){
+        if(input.equals(answer)){
+            // System.out.println("5번 정답");
+            SCORE++;
+        }
+    }
 }
 
 // Quiz6
-class Quiz7 extends tf_quiz{
+class Quiz7 extends tf_quiz implements quiz_interface{
     public Quiz7() {
         setTitle("Quiz7");
         // Button Action : click the button, move to next quiz
@@ -308,6 +315,8 @@ class Quiz7 extends tf_quiz{
                 q8.question();
                 tfAnswerList[3] = q8.question();
                 tfInputList[3] = q8.trueButton;
+                String answer7 = String.valueOf(tfInputList[2].isSelected());
+                q8.score(answer7,"false");
                 setVisible(false); // invisible
             }
         });
@@ -324,9 +333,16 @@ class Quiz7 extends tf_quiz{
         add(jPanel);
         return "false";
     }
+    @Override
+    public void score(String input, String answer){
+        if(input.equals(answer)){
+            // System.out.println("6번 정답");
+            SCORE++;
+        }
+    }
 }
 // Quiz8
-class Quiz8 extends tf_quiz{
+class Quiz8 extends tf_quiz implements quiz_interface{
     public Quiz8() {
         setTitle("Quiz8");
         // Button Action : click the button, move to next quiz
@@ -334,20 +350,19 @@ class Quiz8 extends tf_quiz{
             @Override
             public void actionPerformed(ActionEvent e) {
                 String answer8 = String.valueOf(tfInputList[3].isSelected());
-                
                 if (answer8.equals("true") ){
-                    System.out.print("돌아감");
+                    // System.out.println("6번 정답");
                     SCORE++;
                 }
-                // print test
-                for (JRadioButton j: tfInputList) {
-                    System.out.print("퀴즈5-8 인풋");
-                    System.out.println(j.isSelected());
-                }
-                for (String j: tfAnswerList) {
-                    System.out.print("퀴즈5-8 정답");
-                    System.out.println(j);
-                }
+                // // print test
+                // for (JRadioButton j: tfInputList) {
+                //     System.out.print("퀴즈5-8 인풋");
+                //     System.out.println(j.isSelected());
+                // }
+                // for (String j: tfAnswerList) {
+                //     System.out.print("퀴즈5-8 정답");
+                //     System.out.println(j);
+                // }
                 // test end
 
                 // SAVE SCORE in a File
@@ -377,6 +392,14 @@ class Quiz8 extends tf_quiz{
         jPanel.add(btn2, BorderLayout.SOUTH);
         add(jPanel);
         return "true";
+    }
+
+    @Override
+    public void score(String input, String answer){
+        if(input.equals(answer)){
+            // System.out.println("7번 정답");
+            SCORE++;
+        }
     }
     }
 }
