@@ -15,6 +15,10 @@ import java.util.ArrayList;
 public class Quiz extends math_quiz{
     // Static valuable to add and save score of a player
     answer aa = new answer();
+    // input and answer for quiz1
+    public JTextField inputq1 = new JTextField();
+    public String answerq1 = "";
+
     public static int SCORE = 0;
 
     //answer var
@@ -35,15 +39,16 @@ public class Quiz extends math_quiz{
         btn2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                aa.setInput(answer.getText());
-                String input1 = aa.getInput();
+                //jake test
+                // System.out.println(inputq1.getText());
+                if(answerq1.equals(inputq1.getText())){SCORE++;}
                 // Change Frame
                 // Call Quiz2 and Quiz2 extends math_quiz. So, we have to create object
                 Quiz2 q2 = new Quiz2(); 
                 q2.random(); // generate num1 num2
                 q2.question(); // generate quiz with num1 num2, and answer
                 q2.answer(); //compare
-                q2.score(input1,answer1);
+                // q2.score(input1,answer1);
                 setVisible(false); // invisible
             }
         });
@@ -55,6 +60,8 @@ public class Quiz extends math_quiz{
         jPanel.add(question, BorderLayout.EAST);
         answer_1 = num2 + num1;
         aa.setAnswer(answer_1);
+        answerq1 = Integer.toString(answer_1);
+
     }
     String answer1 = String.valueOf(aa.getAnswer());
 
@@ -91,7 +98,7 @@ class Quiz2 extends math_quiz implements quiz_interface{
     @Override
     public void question() {
         // TODO Auto-generated method stub
-        JLabel question = new JLabel(num2+" - "+num1+" = ? (Not Graded)") ; // question
+        JLabel question = new JLabel(num2+" - "+num1+" = ?") ; // question
         jPanel.add(question, BorderLayout.EAST);
         add(jPanel);
         answer_2 = num2 - num1;
@@ -111,10 +118,10 @@ class Quiz2 extends math_quiz implements quiz_interface{
     @Override
     public void score(String input1, String answer1){
         if(input1.equals(answer1)){
-            System.out.println(input1);
-            System.out.println(answer1);
+            // System.out.println(input1);
+            // System.out.println(answer1);
             SCORE++;
-            System.out.println(SCORE);
+            // System.out.println(SCORE);
         }
     }
 }
@@ -162,10 +169,10 @@ class Quiz3 extends math_quiz implements quiz_interface{
     @Override
     public void score(String input2, String answer2){
         if(input2.equals(answer2)){
-            System.out.println(input2);
-            System.out.println(answer2);
+            // System.out.println(input2);
+            // System.out.println(answer2);
             SCORE++;
-            System.out.println(SCORE);
+            // System.out.println(SCORE);
         }
     }
 }
@@ -198,7 +205,7 @@ class Quiz4 extends math_quiz implements quiz_interface{
         add(jPanel);
         arr = PrimeNumber.Primenumber(num1, num2);
         answer_4 = arr.get(0);
-        // aa.setAnswer(answer_4);
+        aa.setAnswer(answer_4);
     }
 
 
@@ -214,10 +221,10 @@ class Quiz4 extends math_quiz implements quiz_interface{
     @Override
     public void score(String input3, String answer3){
         if(input3.equals(answer3)){
-            System.out.println(input3);
-            System.out.println(answer3);
+            // System.out.println(input3);
+            // System.out.println(answer3);
             SCORE++;
-            System.out.println(SCORE);
+            // System.out.println(SCORE);
         }
     }
 }

@@ -95,6 +95,7 @@ public class input extends JFrame {
                     q1.random();
                     q1.question();
                     q1.answer();
+                    q1.inputq1 = q1.answer;
                     setVisible(false); // invisible
                 }
             }
