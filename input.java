@@ -4,6 +4,11 @@ import java.awt.event.ActionListener;
 import javax.swing.*;
 import java.awt.*;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+
 public class input extends JFrame {
         JPanel jPanel = new JPanel();
         
@@ -67,7 +72,16 @@ public class input extends JFrame {
                     gender_info = gender_text.getText();
                     
                     // SAVE information in a file
+                    String save_text = name_info + ", " + major_info + ", " + gender_info+ ", " ;
+                    try (FileWriter f = new FileWriter("player.txt", true);
+                            BufferedWriter b = new BufferedWriter(f);
+                            PrintWriter p = new PrintWriter(b);) {
+                        p.println("");
+                        p.print(save_text);
 
+                    } catch (IOException i) {
+                        i.printStackTrace();
+                    }
                     
                     // Change Frame
                     // Call Quiz1 and Quiz1 extends quizframe1. So, we have to create object

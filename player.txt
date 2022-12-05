@@ -1,0 +1,4 @@
+Jake, AI, Male, 8
+Haley, ME, Female, 10
+Minse, CS, Male, 6
+mike, test, ai, 0

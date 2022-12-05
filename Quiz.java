@@ -4,6 +4,10 @@ import java.awt.event.ActionListener;
 import javax.swing.*;
 import java.awt.*;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 //Quiz1
 public class Quiz extends math_quiz{
     // Static valuable to add and save score of a player
@@ -252,6 +256,16 @@ class Quiz8 extends tf_quiz{
             @Override
             public void actionPerformed(ActionEvent e) {
                 // SAVE SCORE in a File
+                String save_score = String.valueOf(SCORE);
+                try (FileWriter f = new FileWriter("player.txt", true);
+                        BufferedWriter b = new BufferedWriter(f);
+                        PrintWriter p = new PrintWriter(b);) {
+                    
+                    p.print(save_score);
+
+                } catch (IOException i) {
+                    i.printStackTrace();
+                }
 
                 new Ranking(); // Go to Ranking System
                 setVisible(false); // invisible
