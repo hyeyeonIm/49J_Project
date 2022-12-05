@@ -167,10 +167,10 @@ class Quiz4 extends math_quiz{
         jPanel.add(question, BorderLayout.EAST);
         add(jPanel);
         answer_4 = PrimeNumber.Primenumber(num1, num2);
-        System.out.println(answer_1);
-        System.out.println(answer_2);
-        System.out.println(answer_3);
-        System.out.println(answer_4);
+        // System.out.println(answer_1);
+        // System.out.println(answer_2);
+        // System.out.println(answer_3);
+        // System.out.println(answer_4);
         // System.out.println(answer_5);
         // System.out.println(answer_6);
         // System.out.println(answer_7);
