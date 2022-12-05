@@ -43,7 +43,7 @@ public class Quiz extends math_quiz implements quiz_interface{
                 q2.random(); // generate num1 num2
                 q2.question(); // generate quiz with num1 num2, and answer
                 q2.answer(); //compare
-                q2.score("test", "test");
+                q2.score();
                 setVisible(false); // invisible
             }
         });
@@ -65,10 +65,10 @@ public class Quiz extends math_quiz implements quiz_interface{
         add(jPanel);
     }
 
-    String ainput=aa.getInput();
-    String aanswer_str =String.valueOf(aa.getAnswer());
     @Override
-    public void score(String ainput, String aanswer_str){
+    public void score(){
+        String ainput=aa.getInput();
+        String aanswer_str =String.valueOf(aa.getAnswer());
         if(ainput.equals(aanswer_str)){
             System.out.println(aa.getAnswer());
             System.out.println(aa.getInput());
@@ -82,16 +82,16 @@ class Quiz2 extends math_quiz implements quiz_interface{
     public Quiz2() {
         setTitle("Quiz2");
         // Button Action : click the button, move to next quiz
-
         btn2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.out.println(SCORE);
+                aa.setInput(answer.getText());
                 // Change Frame
                 Quiz3 q3 = new Quiz3(); 
                 q3.random();
                 q3.question();
                 q3.answer();
+                q3.score();
                 setVisible(false); // invisible
             }
         });
@@ -103,20 +103,21 @@ class Quiz2 extends math_quiz implements quiz_interface{
         jPanel.add(question, BorderLayout.EAST);
         add(jPanel);
         answer_2 = num2 - num1;
-
+        aa.setAnswer(answer_2);
     }
 
     @Override
     public void answer() {
         // TODO Auto-generated method stub
-        JTextField answer = new JTextField("          ") ; // answer
         jPanel.add(answer, BorderLayout.WEST);
         jPanel.add(btn2, BorderLayout.SOUTH);
         add(jPanel);
     }
 
     @Override
-    public void score(String ainput, String aanswer_str){
+    public void score(){
+        String ainput=aa.getInput();
+        String aanswer_str =String.valueOf(aa.getAnswer());
         if(ainput.equals(aanswer_str)){
             System.out.println(aa.getAnswer());
             System.out.println(aa.getInput());
@@ -127,7 +128,7 @@ class Quiz2 extends math_quiz implements quiz_interface{
 }
 
 // Quiz3
-class Quiz3 extends math_quiz{
+class Quiz3 extends math_quiz implements quiz_interface{
     public Quiz3() {
         setTitle("Quiz3");
         // Button Action : click the button, move to next quiz
@@ -156,15 +157,26 @@ class Quiz3 extends math_quiz{
     @Override
     public void answer() {
         // TODO Auto-generated method stub
-        JTextField answer = new JTextField("          ") ; // answer
         jPanel.add(answer, BorderLayout.WEST);
         jPanel.add(btn2, BorderLayout.SOUTH);
         add(jPanel);
     }
+
+    @Override
+    public void score(){
+        String ainput=aa.getInput();
+        String aanswer_str =String.valueOf(aa.getAnswer());
+        if(ainput.equals(aanswer_str)){
+            System.out.println(aa.getAnswer());
+            System.out.println(aa.getInput());
+            SCORE++;
+            System.out.println(SCORE);
+        }
+    }
 }
 
 // Quiz4
-class Quiz4 extends math_quiz{
+class Quiz4 extends math_quiz implements quiz_interface{
     public Quiz4() {
         setTitle("Quiz4");
         // Button Action : click the button, move to next quiz
@@ -200,10 +212,21 @@ class Quiz4 extends math_quiz{
     @Override
     public void answer() {
         // TODO Auto-generated method stub
-        JTextField answer = new JTextField("          ") ; // answer
         jPanel.add(answer, BorderLayout.WEST);
         jPanel.add(btn2, BorderLayout.SOUTH);
         add(jPanel);
+    }
+
+    @Override
+    public void score(){
+        String ainput=aa.getInput();
+        String aanswer_str =String.valueOf(aa.getAnswer());
+        if(ainput.equals(aanswer_str)){
+            System.out.println(aa.getAnswer());
+            System.out.println(aa.getInput());
+            SCORE++;
+            System.out.println(SCORE);
+        }
     }
 }
 ///////////////////////

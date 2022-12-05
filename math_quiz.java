@@ -1,6 +1,7 @@
 import java.awt.Color;
 
 import javax.swing.*;
+import java.awt.*;
 
 import java.util.Random;
 
@@ -8,12 +9,10 @@ import java.util.Random;
 abstract class math_quiz extends JFrame{
     JPanel jPanel = new JPanel();
     JButton btn2 = new JButton("NEXT");
-
+    JTextField answer = new JTextField() ; // answer
+    
     Color color1 = new Color(198,218,214);
     Color color2 = new Color(109,146,155);
-
-
-   
 
     public abstract void question();
     public abstract void answer();
@@ -35,6 +34,7 @@ abstract class math_quiz extends JFrame{
 
     public math_quiz(){
         setSize(500, 500); // size
+        jPanel.setLayout(new GridLayout(3, 4,0,50)) ;
 
         jPanel.setBackground(color1);
         btn2.setBackground(color2);
