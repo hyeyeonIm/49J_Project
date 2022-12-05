@@ -1,13 +1,6 @@
 Jake, AI, Male, 8
 Haley, ME, Female, 10
 Minse, CS, Male, 6
-mike, test, ai, 0
-, , , 
-, , , 
-, , , 
-, , , 
-, , , 
-, , , 
-, , , 
-, , , 
-, , , 
+mike, AI, Male, 15
+LEAST, babo, male, 0
+name, major, gender, 0
