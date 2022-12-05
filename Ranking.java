@@ -122,8 +122,8 @@ public class Ranking extends JFrame{
                 public void actionPerformed(ActionEvent e) {
                     new input(); // Go MainFrame
                     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                    setVisible(false); // invisible
-                    dispose();
+                    jf.setVisible(false); // invisible
+                    jf.dispose();
 
                 }
             });
