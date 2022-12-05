@@ -26,6 +26,8 @@ public class input extends JFrame {
     
         private JButton btn1;
 
+        JOptionPane err = new JOptionPane(); // for error message
+
         public input() {
     
             super("Enter your info!");
@@ -71,6 +73,10 @@ public class input extends JFrame {
                     major_info = major_text.getText();
                     gender_info = gender_text.getText();
                     
+                    if (name_info.equals("") || major_info.equals("") ||  gender_info.equals("")){
+                        JOptionPane.showMessageDialog(null, "Enter your info", "ERROR MESSAGE", JOptionPane.ERROR_MESSAGE);
+                    }
+                    else{
                     // SAVE information in a file
                     String save_text = name_info + ", " + major_info + ", " + gender_info+ ", " ;
                     try (FileWriter f = new FileWriter("player.txt", true);
@@ -82,7 +88,6 @@ public class input extends JFrame {
                     } catch (IOException i) {
                         i.printStackTrace();
                     }
-                    
                     // Change Frame
                     // Call Quiz1 and Quiz1 extends quizframe1. So, we have to create object
                     Quiz q1 = new Quiz();
@@ -91,8 +96,11 @@ public class input extends JFrame {
                     q1.answer();
                     setVisible(false); // invisible
                 }
-            });
+            }
         }
+            );
+        }
+
         public static void main(String[] args) {
             new input();
         }
