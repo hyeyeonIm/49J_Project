@@ -10,7 +10,6 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 
-// import Factorial.java.*;
 //Quiz1
 public class Quiz extends math_quiz{
     // Static valuable to add and save score of a player
@@ -158,10 +157,7 @@ class Quiz3 extends math_quiz implements quiz_interface{
     @Override
     public void score(String input2, String answer2){
         if(input2.equals(answer2)){
-            // System.out.println(input2);
-            // System.out.println(answer2);
             SCORE++;
-            // System.out.println(SCORE);
         }
     }
 }
