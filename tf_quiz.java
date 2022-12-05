@@ -13,6 +13,7 @@ abstract class tf_quiz extends JFrame{
 
     public abstract String question();
 
+    // frame of true false quiz
     public tf_quiz(){
         setSize(500, 500); // size
 

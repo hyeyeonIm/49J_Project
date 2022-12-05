@@ -31,6 +31,7 @@ abstract class math_quiz extends JFrame{
         num2 = rand2.nextInt(upperbound2) + 7; // 7 ~ 15
     };
 
+    // frame of math_quiz
     public math_quiz(){
         setSize(500, 500); // size
         jPanel.setLayout(new GridLayout(3, 4,0,50)) ;

@@ -18,8 +18,10 @@ public class Quiz extends math_quiz{
     public JTextField inputq1 = new JTextField();
     public String answerq1 = "";
 
+    // SCORE for save score
     public static int SCORE = 0;
 
+    // List for saving button input
     public JRadioButton tfInputList[] = new JRadioButton [4];
     public String tfAnswerList[] = new String [4];
 
@@ -41,8 +43,7 @@ public class Quiz extends math_quiz{
         btn2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //jake test
-                // System.out.println(inputq1.getText());
+                //If answer is correct, SCORE ++
                 if(answerq1.equals(inputq1.getText())){SCORE++;}
                 // Change Frame
                 // Call Quiz2 and Quiz2 extends math_quiz. So, we have to create object
@@ -50,7 +51,6 @@ public class Quiz extends math_quiz{
                 q2.random(); // generate num1 num2
                 q2.question(); // generate quiz with num1 num2, and answer
                 q2.answer(); //compare
-                // q2.score(input1,answer1);
                 setVisible(false); // invisible
             }
         });
@@ -58,14 +58,13 @@ public class Quiz extends math_quiz{
     @Override
     public void question() {
         // TODO Auto-generated method stub
-        JLabel question = new JLabel(num1+" + "+num2+" = ?") ; // question
+        JLabel question = new JLabel(num1+" + "+num2+" = ?") ; // question of random plus
         jPanel.add(question, BorderLayout.EAST);
         answer_1 = num2 + num1;
         aa.setAnswer(answer_1);
         answerq1 = Integer.toString(answer_1);
 
     }
-    String answer1 = String.valueOf(aa.getAnswer());
 
     @Override
     public void answer() {
@@ -89,11 +88,14 @@ class Quiz2 extends math_quiz{
                 // if (input2.equals(answer2)){SCORE++;}
                 // Change Frame
                 Quiz3 q3 = new Quiz3(); 
+                // for override
                 q3.random();
                 q3.question();
                 q3.answer();
                 setVisible(false); // invisible
-                q3.score(input2,answer2);
+                q3.score(input2,answer2); 
+                // These input2, answer2 variables have to go next class, 
+                // so if this method locate upside, there are two frames exist.
             }
         });
     }
@@ -117,7 +119,7 @@ class Quiz2 extends math_quiz{
     }
 }
 
-// Quiz3
+// Quiz3, math_quiz : abstract class, quiz_interface : interface for compare answer and input
 class Quiz3 extends math_quiz implements quiz_interface{
     public Quiz3() {
         setTitle("Quiz3");
@@ -125,9 +127,9 @@ class Quiz3 extends math_quiz implements quiz_interface{
         btn2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                aa.setInput(answer.getText());
-                String input3 = aa.getInput();
-                String answer3 = String.valueOf(aa.getAnswer());
+                aa.setInput(answer.getText()); // get text value and using setInput
+                String input3 = aa.getInput(); // Save input value using getInput
+                String answer3 = String.valueOf(aa.getAnswer()); // Save answer value using getAnswer and change type of value
                 // Change Frame
                 Quiz4 q4 = new Quiz4(); 
                 q4.random();
@@ -156,12 +158,10 @@ class Quiz3 extends math_quiz implements quiz_interface{
         add(jPanel);
     }
 
-    String answer3 = String.valueOf(aa.getAnswer());
+    // Compare answer and input at Quiz2
     @Override
     public void score(String input2, String answer2){
-        if(input2.equals(answer2)){
-            SCORE++;
-        }
+        if(input2.equals(answer2)){SCORE++;}
     }
 }
 
@@ -207,17 +207,12 @@ class Quiz4 extends math_quiz implements quiz_interface{
         add(jPanel);
     }
 
-    String answer4 = String.valueOf(aa.getAnswer());
+    // Compare answer and input at Quiz3
     @Override
     public void score(String input3, String answer3){
-        if(input3.equals(answer3)){
-            SCORE++;
-        }
+        if(input3.equals(answer3)){SCORE++;}
     }
 }
-///////////////////////
-//    QUIZ 5 ~ 8    //
-//////////////////////
 
 // Quiz5
 class Quiz5 extends tf_quiz implements quiz_interface{
@@ -252,12 +247,7 @@ class Quiz5 extends tf_quiz implements quiz_interface{
     }
     @Override
     public void score(String input4, String answer4){
-        if(input4.equals(answer4)){
-            // System.out.println(input4);
-            // System.out.println(answer4);
-            SCORE++;
-            // System.out.println(SCORE);
-        }
+        if(input4.equals(answer4)){SCORE++;}
     }
 }
 
@@ -295,10 +285,7 @@ class Quiz6 extends tf_quiz implements quiz_interface{
 
     @Override
     public void score(String input, String answer){
-        if(input.equals(answer)){
-            // System.out.println("5번 정답");
-            SCORE++;
-        }
+        if(input.equals(answer)){SCORE++;}
     }
 }
 
@@ -335,10 +322,7 @@ class Quiz7 extends tf_quiz implements quiz_interface{
     }
     @Override
     public void score(String input, String answer){
-        if(input.equals(answer)){
-            // System.out.println("6번 정답");
-            SCORE++;
-        }
+        if(input.equals(answer)){SCORE++;}
     }
 }
 // Quiz8
@@ -350,20 +334,7 @@ class Quiz8 extends tf_quiz implements quiz_interface{
             @Override
             public void actionPerformed(ActionEvent e) {
                 String answer8 = String.valueOf(tfInputList[3].isSelected());
-                if (answer8.equals("true") ){
-                    // System.out.println("6번 정답");
-                    SCORE++;
-                }
-                // // print test
-                // for (JRadioButton j: tfInputList) {
-                //     System.out.print("퀴즈5-8 인풋");
-                //     System.out.println(j.isSelected());
-                // }
-                // for (String j: tfAnswerList) {
-                //     System.out.print("퀴즈5-8 정답");
-                //     System.out.println(j);
-                // }
-                // test end
+                if (answer8.equals("true") ){SCORE++;}
 
                 // SAVE SCORE in a File
                 String save_score = String.valueOf(SCORE);
@@ -396,10 +367,7 @@ class Quiz8 extends tf_quiz implements quiz_interface{
 
     @Override
     public void score(String input, String answer){
-        if(input.equals(answer)){
-            // System.out.println("7번 정답");
-            SCORE++;
-        }
+        if(input.equals(answer)){SCORE++;}
     }
     }
 }

@@ -29,13 +29,14 @@ public class input extends JFrame {
         JOptionPane err = new JOptionPane(); // for error message
 
         public input() {
-    
+            // setTitle
             super("Enter your info!");
     
             name = new JLabel("Name") ;
             major = new JLabel("Major") ;
             gender = new JLabel("Gender");
     
+            // Get text
             name_text = new JTextField() ;
             major_text = new JTextField() ;
             gender_text = new JTextField();
@@ -52,6 +53,7 @@ public class input extends JFrame {
             // vertical gap : 50
             jPanel.setLayout(new GridLayout(3, 4,0,50)) ;
     
+            // add to Panel
             jPanel.add(name, BorderLayout.EAST) ;
             jPanel.add(name_text, BorderLayout.WEST) ;
             jPanel.add(major, BorderLayout.EAST) ;
@@ -59,12 +61,13 @@ public class input extends JFrame {
             jPanel.add(gender, BorderLayout.EAST) ;
             jPanel.add(gender_text, BorderLayout.WEST) ; 
         
+            // add Panel and btn
             this.add(jPanel, BorderLayout.CENTER) ; 
             this.add(btn1, BorderLayout.SOUTH) ;
     
             setVisible(true);
     
-            // button
+            // button action
             btn1.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
@@ -85,7 +88,7 @@ public class input extends JFrame {
                             PrintWriter p = new PrintWriter(b);) {
                         p.println("");
                         p.print(save_text);
-
+                    // exception
                     } catch (IOException i) {
                         i.printStackTrace();
                     }

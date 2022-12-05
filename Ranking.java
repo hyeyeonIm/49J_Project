@@ -18,7 +18,7 @@ public class Ranking extends JFrame{
 	private JTable jtable;
 	private JScrollPane jsp;
 
-    static String contents[][] = new String[3][4];
+    static String contents[][] = new String[100][4];
 
         public Ranking() {
             //test
@@ -59,7 +59,7 @@ public class Ranking extends JFrame{
                 // Sort and Print player
                 Collections.sort(playerList, Collections.reverseOrder());
                 int cnt = 0;
-                int topN = 2;
+                int topN = lines-1;
                 for (Player p : playerList) {
                     // System.out.println(p.name + " " + p.major + " " + p.gender + " " + p.score);
                     contents[cnt][0] = p.name;
@@ -67,6 +67,10 @@ public class Ranking extends JFrame{
                     contents[cnt][2] = p.gender;
                     contents[cnt][3] = String.valueOf(p.score);
             
+                    if (lines == 1)
+                    {
+                        break;
+                    }
                     if (cnt >= topN) {
                         break;
                     }
