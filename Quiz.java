@@ -18,6 +18,7 @@ public class Quiz extends math_quiz{
                 // Change Frame
                 // Call Quiz2 and Quiz2 extends math_quiz. So, we have to create object
                 Quiz2 q2 = new Quiz2(); 
+                q2.random();
                 q2.question();
                 q2.answer();
                 // new Ranking_System(); // create new object
@@ -28,7 +29,7 @@ public class Quiz extends math_quiz{
     @Override
     public void question() {
         // TODO Auto-generated method stub
-        JLabel question = new JLabel("1 + 1 ?") ; // question
+        JLabel question = new JLabel(num1+" + "+num2+" = ?") ; // question
         jPanel.add(question, BorderLayout.EAST);
     }
 
@@ -51,9 +52,11 @@ class Quiz2 extends math_quiz{
         btn2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+        
                 // Change Frame
                 // Call Quiz1 and Quiz1 extends math_quiz. So, we have to create object
                 Quiz3 q3 = new Quiz3(); 
+                q3.random();
                 q3.question();
                 q3.answer();
                 setVisible(false); // invisible
@@ -63,7 +66,7 @@ class Quiz2 extends math_quiz{
     @Override
     public void question() {
         // TODO Auto-generated method stub
-        JLabel question = new JLabel("2 + 2 ?") ; // question
+        JLabel question = new JLabel(num2+" - "+num1+" = ?") ; // question
         jPanel.add(question, BorderLayout.EAST);
         add(jPanel);
     }
@@ -89,6 +92,7 @@ class Quiz3 extends math_quiz{
                 // Change Frame
                 // Call Quiz2 and Quiz2 extends math_quiz. So, we have to create object
                 Quiz4 q4 = new Quiz4(); 
+                q4.random();
                 q4.question();
                 q4.answer();
                 setVisible(false); // invisible
@@ -97,8 +101,8 @@ class Quiz3 extends math_quiz{
     }
     @Override
     public void question() {
-        // TODO Auto-generated method stub
-        JLabel question = new JLabel("3 + 3 ?") ; // question
+        // TODO Auto-generated method stu
+        JLabel question = new JLabel(num2+"! = ?") ; // question
         jPanel.add(question, BorderLayout.EAST);
         add(jPanel);
     }
@@ -133,7 +137,7 @@ class Quiz4 extends math_quiz{
     @Override
     public void question() {
         // TODO Auto-generated method stub
-        JLabel question = new JLabel("4 + 4 ?") ; // question
+        JLabel question = new JLabel("What is prime number between "+num1+" and "+ num2+" = ?") ; // question
         jPanel.add(question, BorderLayout.EAST);
         add(jPanel);
     }

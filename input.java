@@ -72,6 +72,7 @@ public class input extends JFrame {
                     // Change Frame
                     // Call Quiz1 and Quiz1 extends quizframe1. So, we have to create object
                     Quiz q1 = new Quiz();
+                    q1.random();
                     q1.question();
                     q1.answer();
                     setVisible(false); // invisible
