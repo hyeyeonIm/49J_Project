@@ -10,6 +10,8 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 
+
+// Quiz1 - Quiz4 is math_quiz, so these classes extends math_quiz abstract
 //Quiz1
 public class Quiz extends math_quiz{
     // Create answer object to add and save score of a player
@@ -143,8 +145,10 @@ class Quiz3 extends math_quiz implements quiz_interface{
             }
         });
     }
+
+    // question(), answer() is from math_quiz abstract class
     @Override
-    public void question() {
+    public void question() { // Show question 
         // TODO Auto-generated method stu
         JLabel question = new JLabel(num1+" ! = ?") ; // question
         jPanel.add(question, BorderLayout.EAST);
@@ -154,7 +158,7 @@ class Quiz3 extends math_quiz implements quiz_interface{
     }
 
     @Override
-    public void answer() {
+    public void answer() { // add button
         // TODO Auto-generated method stub
         jPanel.add(answer, BorderLayout.WEST);
         jPanel.add(btn2, BorderLayout.SOUTH);
@@ -168,7 +172,7 @@ class Quiz3 extends math_quiz implements quiz_interface{
     // So we can't compare quiz2 input and answer at quiz2, we have to compare these at quiz3
     // Other things are same such as quiz3, 4, 5, .....
     // This is reason why we make answer class and Quiz 3~8 implements quiz_interface, not Quiz 1,2
-    @Override
+    @Override  // score method is from quiz_interface
     public void score(String input2, String answer2){
         if(input2.equals(answer2)){SCORE++;}
     }
@@ -204,7 +208,6 @@ class Quiz4 extends math_quiz implements quiz_interface{
         arr = PrimeNumber.Primenumber(num1, num2);
         answer_4 = arr.get(0);
         aa.setAnswer(answer_4);
-
     }
 
 
@@ -223,6 +226,7 @@ class Quiz4 extends math_quiz implements quiz_interface{
     }
 }
 
+// Quiz5 - Quiz8 is True and False quiz, so these classes extends tf_quiz abstract
 // Quiz5
 class Quiz5 extends tf_quiz implements quiz_interface{
     public Quiz5() {
