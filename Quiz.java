@@ -12,8 +12,9 @@ import java.util.ArrayList;
 
 //Quiz1
 public class Quiz extends math_quiz{
-    // Static valuable to add and save score of a player
+    // Create answer object to add and save score of a player
     answer aa = new answer();
+
     // input and answer for quiz1
     public JTextField inputq1 = new JTextField();
     public String answerq1 = "";
@@ -36,6 +37,7 @@ public class Quiz extends math_quiz{
     public int answer_7;
     public int answer_8;
 
+    // Quiz1 
     public Quiz() {
         setTitle("Quiz1");
         
@@ -44,6 +46,8 @@ public class Quiz extends math_quiz{
             @Override
             public void actionPerformed(ActionEvent e) {
                 //If answer is correct, SCORE ++
+                // Using getText() function, we can get player's input string
+                // And we wil compare answer and input, if you wnat to read about answerq1, go to the question() method
                 if(answerq1.equals(inputq1.getText())){SCORE++;}
                 // Change Frame
                 // Call Quiz2 and Quiz2 extends math_quiz. So, we have to create object
@@ -60,10 +64,8 @@ public class Quiz extends math_quiz{
         // TODO Auto-generated method stub
         JLabel question = new JLabel(num1+" + "+num2+" = ?") ; // question of random plus
         jPanel.add(question, BorderLayout.EAST);
-        answer_1 = num2 + num1;
-        aa.setAnswer(answer_1);
-        answerq1 = Integer.toString(answer_1);
-
+        answer_1 = num2 + num1; // answer of first quiz
+        answerq1 = Integer.toString(answer_1); // answer_1 is integer and change to string because we wnat to compare this and palyer's input(String)
     }
 
     @Override
@@ -82,10 +84,11 @@ class Quiz2 extends math_quiz{
         btn2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                // Using getText() function, we can get player's input
+                // And we will use setInput method for saving player's input
                 aa.setInput(answer.getText());
-                String input2 = aa.getInput();
-                String answer2 = String.valueOf(aa.getAnswer());
-                // if (input2.equals(answer2)){SCORE++;}
+                String input2 = aa.getInput(); // We can get palyer's input using getInput() method
+                String answer2 = String.valueOf(aa.getAnswer()); // Change integer to string for comparing
                 // Change Frame
                 Quiz3 q3 = new Quiz3(); 
                 // for override
@@ -93,7 +96,7 @@ class Quiz2 extends math_quiz{
                 q3.question();
                 q3.answer();
                 setVisible(false); // invisible
-                q3.score(input2,answer2); 
+                q3.score(input2,answer2); // we will compare quiz2 values at quiz3, becuase if you push the botton, frame is changed
                 // These input2, answer2 variables have to go next class, 
                 // so if this method locate upside, there are two frames exist.
             }
@@ -159,6 +162,12 @@ class Quiz3 extends math_quiz implements quiz_interface{
     }
 
     // Compare answer and input at Quiz2
+    // This class implements quiz_interface, so we will override score method
+    // This method compares player's input and answer
+    // We will compare quiz2 because after pushing button, value(input) save.
+    // So we can't compare quiz2 input and answer at quiz2, we have to compare these at quiz3
+    // Other things are same such as quiz3, 4, 5, .....
+    // This is reason why we make answer class and Quiz 3~8 implements quiz_interface, not Quiz 1,2
     @Override
     public void score(String input2, String answer2){
         if(input2.equals(answer2)){SCORE++;}
