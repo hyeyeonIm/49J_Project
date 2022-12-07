@@ -45,65 +45,65 @@ JDK version : 18.0.2.1
 ## 6. Libraries
 
 ### Factorial.java
-java.util.Random
-java.util.ArrayList
+- java.util.Random
+- java.util.ArrayList
 
 
 ### input.java
-java.awt.event.ActionEvent;
-java.awt.event.ActionListener;
+- java.awt.event.ActionEvent;
+- java.awt.event.ActionListener;
 
 
-javax.swing.*;
-java.awt.*;
+- javax.swing.*;
+- java.awt.*;
 
 
-java.io.BufferedWriter;
-java.io.FileWriter;
-java.io.IOException;
-java.io.PrintWriter;
+- java.io.BufferedWriter;
+- java.io.FileWriter;
+- java.io.IOException;
+- java.io.PrintWriter;
 
 
 ### math_quiz.java
- java.awt.Color
-javax.swing.*
-java.awt.*
-java.util.Random
+- java.awt.Color
+- javax.swing.*
+- java.awt.*
+- java.util.Random
 
 ### Player.java
-java.util.Collections
-java.util.LinkedList
-java.util.List
+- java.util.Collections
+- java.util.LinkedList
+- java.util.List
 
 ### PrimeNumber.java
-import java.util.Scanner
-import java.util.Random
-import java.util.ArrayList
+- import java.util.Scanner
+- import java.util.Random
+- import java.util.ArrayList
 
 ### Quiz..java
-import java.awt.event.ActionEvent
-java.awt.event.ActionListener
-javax.swing.*
-java.awt.*
-java.io.BufferedWriter
-java.io.FileWriter
-java.io.IOException
-java.io.PrintWriter
-java.util.ArrayList
+- import java.awt.event.ActionEvent
+- java.awt.event.ActionListener
+- javax.swing.*
+- java.awt.*
+- java.io.BufferedWriter
+- java.io.FileWriter
+- java.io.IOException
+- java.io.PrintWriter
+- java.util.ArrayList
 
 ### Ranking.java
-java.awt.event.ActionEvent;
-java.awt.event.ActionListener;
- javax.swing.*;
-java.awt.*;
-java.io.BufferedReader;
-java.io.FileReader;
-java.io.IOException;
-java.util.Collections;
-java.util.LinkedList;
-java.util.List;
+- java.awt.event.ActionEvent;
+- java.awt.event.ActionListener;
+- javax.swing.*;
+- java.awt.*;
+- java.io.BufferedReader;
+- java.io.FileReader;
+- java.io.IOException;
+- java.util.Collections;
+- java.util.LinkedList;
+- java.util.List;
 
 ### tf_quiz.java
-java.awt.*
-javax.swing.*
+- java.awt.*
+- javax.swing.*
 
