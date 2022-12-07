@@ -71,18 +71,18 @@ public class input extends JFrame {
             btn1.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                    // Save info
-                    name_info = name_text.getText();
-                    major_info = major_text.getText();
-                    gender_info = gender_text.getText();
+                    // Get Input from JTextField
+                    name_info = name_text.getText();        
+                    major_info = major_text.getText();      
+                    gender_info = gender_text.getText();    
                     
-                    // If nothing in input, error message
+                    // If Textfield could not get anything, raise error.
                     if (name_info.equals("") || major_info.equals("") ||  gender_info.equals("")){
                         JOptionPane.showMessageDialog(null, "Enter your info", "ERROR MESSAGE", JOptionPane.ERROR_MESSAGE);
                     }
                     else{
                     // SAVE information in a file
-                    String save_text = name_info + ", " + major_info + ", " + gender_info+ ", " ;
+                    String save_text = name_info + ", " + major_info + ", " + gender_info+ ", " ; // In comma separate
                     try (FileWriter f = new FileWriter("player.txt", true);
                             BufferedWriter b = new BufferedWriter(f);
                             PrintWriter p = new PrintWriter(b);) {

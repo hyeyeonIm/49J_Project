@@ -17,11 +17,11 @@ public class Ranking extends JFrame{
 	private JFrame jf;
 	private JTable jtable;
 	private JScrollPane jsp;
-
+    // Make a String array to save the information of players
     static String contents[][] = new String[100][4];
 
         public Ranking() {
-            //test
+            // Make file reader to read file
             BufferedReader reader1;
             BufferedReader reader2;
 
@@ -29,76 +29,73 @@ public class Ranking extends JFrame{
                 // Count number of lines(Players) in the file
                 reader1 = new BufferedReader(new FileReader("player.txt"));
                 int lines = 0; // variable which stores number of players
-
+                // While there is no line to read
                 while (reader1.readLine() != null) {
                     lines++;
                 }
                 reader1.close();
-
                 
                 // Create Instances using "lines"
                 reader2 = new BufferedReader(new FileReader("player.txt"));
-                // Player [] players = new Player [lines]; 
-                
-
-                LinkedList<Player> playerList = new LinkedList<Player>(); // Make a linkedlist to save player instances
+                // Make a LinkedList to store player objects
+                LinkedList<Player> playerList = new LinkedList<Player>(); 
                 String line2 = reader2.readLine(); // read first line
+                // read and save new Player objects in playerList LinkedList
                 for (int i = 0; i < lines; i ++) {
-                    // System.out.println(line2);
                     String[] Player_info = line2.split(", ");
                     playerList.add(new Player(Player_info[0], Player_info[1], Player_info[2], Integer.parseInt(Player_info[3])));
                     line2 = reader2.readLine(); // go to next line
-                    // Player player = new Player(Player_info[0], Player_info[1], Player_info[2], Integer.parseInt(Player_info[3]));
-                    // player.setPlayer();
-                    // player.setScore();
-                    // players[i] = player;
                 }
 
                 reader2.close();
 
-                // Sort and Print player
+                // Sort players
                 Collections.sort(playerList, Collections.reverseOrder());
-                int cnt = 0;
-                int topN = lines-1;
+                int cnt = 0;            // cnt increments while the reader reads lines,
+                int topN = lines-1;     // until the last line
+                
+                // Iterates each player object
                 for (Player p : playerList) {
-                    // System.out.println(p.name + " " + p.major + " " + p.gender + " " + p.score);
-                    contents[cnt][0] = p.name;
-                    contents[cnt][1] = p.major;
-                    contents[cnt][2] = p.gender;
-                    contents[cnt][3] = String.valueOf(p.score);
-            
+                    contents[cnt][0] = p.name;                  // save object's name
+                    contents[cnt][1] = p.major;                 // save object's major
+                    contents[cnt][2] = p.gender;                // save object's gender
+                    contents[cnt][3] = String.valueOf(p.score); // Parse the score variable to String.
+                    
+                    // If there is only one line,(= no need to sort object) break the loop
                     if (lines == 1)
                     {
                         break;
                     }
+                    
+                    // If the reader reaches at the last of the line, break it
                     if (cnt >= topN) {
                         break;
                     }
+                    // Otherwise increment cnt
                     else{
                         cnt++;
                     }
                 }
                 System.out.println();
 
-                // pass to FRAME
-                // Player [] topThreePlayers = new Player [3];
 
+            // Handle exception (IOException)
             } catch (IOException e) {
+                // Prints this throwable and its backtrace to the standard error stream.
                 e.printStackTrace();
             }        
 
-            // end test
-            // LOAD players from text file in Player Class with Linked List Data Structure
-            // SORT player instances and extract TOP 3 players
+            // Make new JFrame
             jf = new JFrame("RANKING");
             jf.setLocationRelativeTo(null);
             jf.setSize(500, 500);
             Color color1 = new Color(198,218,214);
             Color color2 = new Color(109,146,155);
 
+            // Set header
             String header[] = {"name", "major", "gender", "score"};
             jtable = new JTable(contents, header);
-		    jsp = new JScrollPane(jtable);
+		    jsp = new JScrollPane(jtable); // scroll function 
 
             JButton btn3 = new JButton("AGAIN");
             JButton btn4 = new JButton("END");

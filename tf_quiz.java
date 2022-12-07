@@ -21,12 +21,10 @@ abstract class tf_quiz extends JFrame{
         btn2.setBackground(color2);
 
         trueButton.setBounds(120, 30, 120, 50);
-        // trueButton.setMnemonic(KeyEvent.VK_B);
         trueButton.setActionCommand("True");
         trueButton.setSelected(true);
 
         falseButton.setBounds(250, 30, 80, 50);
-        // falseButton.setMnemonic(KeyEvent.VK_B);
         falseButton.setActionCommand("False");
         falseButton.setSelected(true);
 
